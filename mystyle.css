@@ -1,0 +1,109 @@
+#container {
+    position: absolute;
+    width: 99%;
+    height: 80ch;
+}
+
+#header {
+    position: relative;
+    width: 100%;
+    height: 28vh;
+    background-color: #DADADC;
+
+
+}
+
+#main {
+    position: absolute;
+    top: 29vh;
+    right: 1vh;
+    width: 206vh;
+    height: 70vh;
+    left: 1vh;
+}
+
+.head {
+    text-align: center;
+    font-size: 19pt;
+    border-radius: 12px;
+
+}
+
+.textboxid {
+    height: 32px;
+    width: 73%;
+    font-size: 10pt;
+}
+
+.hhead {
+    border-spacing: 22px;
+
+}
+
+.td1 {
+    padding: 0px 0px 0px 90px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#btn1:focus {
+    outline: none;
+}
+
+#btn1 {
+    font-size: 20px;
+    background-color: #8EC3EE;
+    border: none;
+    padding: 5px 160px;
+    color: azure;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.vertical-center {
+    position: absolute;
+    right: 10%;
+}
+
+#sub-main {
+    position: absolute;
+    top: 4vh;
+    right: 4vh;
+    width: 202vh;
+    height: 65vh;
+    left: 1vh;
+}
+
+.table2,
+.td1 {
+    padding: 5px;
+}
+
+.td1 {
+    padding: 2px;
+    text-align: left;
+    border-radius: 7%;
+    background-color: #D9CED5
+}
+
+.th1 {
+    text-align: center;
+}
+
+.table2 {
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+
+.th1 {
+    background-color: #7C5C6F;
+    border-collapse: collapse;
+    padding: 1%;
+
+}
+
+.td1:empty::after {
+    content: "\00a0";
+}

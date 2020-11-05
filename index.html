@@ -1,0 +1,191 @@
+<html>
+
+<head>
+    <title>Testing</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="mysrcipts.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="container"></div>
+    <div id="header">
+        <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off ">
+            <table class="head hhead">
+
+                <tr>
+                    <th class="head">Name</th>
+                    <th class="head">Address</th>
+                    <th class="head">City</th>
+                    <th class="head">Pin Code</th>
+                    <th class="head">Phone no.</th>
+                </tr>
+                <tr>
+                    <td class="td11 "><input class="textboxid" id="name" type="text" placeholder="Name" size="45"
+                            maxlength="20" pattern="[(A-Z)(a-z)(\s)]{1,30}" title="Please Provide Only Alphabets"
+                            required></td>
+                    <td class="td11 "><input class="textboxid" id="address" type="text" placeholder="Address" size="45"
+                            maxlength="30" pattern="[(A-Z)(a-z)(0-9)(.)(-)(/)(\s)(,)]{1,30}"
+                            title="Please Provide Alphabets,Backlash,dot,comma and numbers whitespace only" required>
+                    </td>
+                    <td class="td11 "><input class="textboxid" id="city" type="text" placeholder="City" size="45"  maxlength="20"
+                            pattern="[(A-Z)(a-z)]{1,15}" title="Please Provide Only Alphabets" required></td>
+                    <td class="td11 "><input class="textboxid" id="pin" type="text" placeholder="Pin Code" size="45"
+                            maxlength="6" pattern="[0-9]{6}" title="Please provide 6 digits " required></td>
+                    <td class="td11 "><input class="textboxid" id="phone" type="text" placeholder="Phone no." size="45"
+                            maxlength="10" pattern="[7-9]{1}[0-9]{9}" title="Please Provide Valid Number" required></td>
+                </tr>
+
+            </table>
+            <div class="vertical-center">
+                <button id="btn1">Add</button>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div id="main">
+        <div id="sub-main">
+            <table class="table2" style="width:100%;" id="list">
+                <tr>
+                    <th class="th1" colspan="2">Action</th>
+                    <th class="th1">Slno.</th>
+                    <th class="th1">Name</th>
+                    <th class="th1">Address</th>
+                    <th class="th1">City</th>
+                    <th class="th1">Pin Code</th>
+                    <th class="th1">Phone no.</th>
+                </tr>
+                <tr id="row_1">
+                    <td class="td1 o11 "><img id="img_1_0" onclick="editRow('1')" src="edit1.png"
+                            width="40" height="25"></td>
+                    <td class="td1 o11 "><img id="img_1_1" onclick="deleteRow('1')" src="del.png"
+                            width="40" height="25"></td>
+                    <td class="td1 o1" id="slno_1"></td>
+                    <td class="td1 o1" id="name_1"></td>
+                    <td class="td1 o1" id="address_1"></td>
+                    <td class="td1 o1" id="city_1"></td>
+                    <td class="td1 o1" id="pin_1"></td>
+                    <td class="td1 o1" id="phone_1"></td>
+                </tr>
+                <tr id="row_2">
+                    <td class="td1 td2 o3"><img id="img_2_0" onclick="editRow('2')" src="edit1.png"
+                            width="40" height="25"></td>
+                    <td class="td1 td2 o4"><img id="img_2_1" onclick="deleteRow('2')" src="del.png"
+                            width="40" height="25"></td>
+                    <td class="td1 td2 o1 " id="slno_2"></td>
+                    <td class="td1 td2 o1" id="name_2"></td>
+                    <td class="td1 td2 o1" id="address_2"></td>
+                    <td class="td1 td2 o1" id="city_2"></td>
+                    <td class="td1 td2 o1" id="pin_2"></td>
+                    <td class="td1 td2 o1" id="phone_2"></td>
+                </tr>
+                <tr id="row_3">
+                    <td class="td1 td3"><img id="img_3_0" onclick="editRow('3')" src="edit1.png"
+                            width="40" height="25"></td>
+                    <td class="td1 td3"><img id="img_3_1" onclick="deleteRow('3')" src="del.png"
+                            width="40" height="25"></td>
+                    <td class="td1 td3" id="slno_3"></td>
+                    <td class="td1 td3" id="name_3"></td>
+                    <td class="td1 td3" id="address_3"></td>
+                    <td class="td1 td3" id="city_3"></td>
+                    <td class="td1 td3" id="pin_3"></td>
+                    <td class="td1 td3" id="phone_3"></td>
+                </tr>
+                <tr id="row_4">
+                    <td class="td1 td4"><img id="img_4_0" onclick="editRow('4')" src="edit1.png"
+                            width="40" height="25"></td>
+                    <td class="td1 td4"><img id="img_4_1" onclick="deleteRow('4')" src="del.png"
+                            width="40" height="25"></td>
+                    <td class="td1 td4" id="slno_4"></td>
+                    <td class="td1 td4" id="name_4"></td>
+                    <td class="td1 td4" id="address_4"></td>
+                    <td class="td1 td4" id="city_4"></td>
+                    <td class="td1 td4" id="pin_4"></td>
+                    <td class="td1 td4" id="phone_4"></td>
+
+                </tr>
+                <tr id="row_5">
+                    <td class="td1  td5"><img id="img_5_0" onclick="editRow('5')" src="edit1.png"
+                            width="40" height="25"></td>
+                    <td class="td1 td5"><img id="img_5_1" onclick="deleteRow('5')" src="del.png"
+                            width="40" height="25">
+                    </td>
+                    <td class="td1 td5" id="slno_5"></td>
+                    <td class="td1 td5" id="name_5"></td>
+                    <td class="td1 td5" id="address_5"></td>
+                    <td class="td1 td5" id="city_5"></td>
+                    <td class="td1 td5" id="pin_5"></td>
+                    <td class="td1 td5" id="phone_5"></td>
+                </tr>
+                <tr id="row_6">
+                    <td class="td1 td6"><img id="img_6_0" onclick="editRow('6')" src="edit1.png"
+                            width="40" height="25"></td>
+                    <td class="td1 td6"><img id="img_6_1" onclick="deleteRow('6')" src="del.png"
+                            width="40" height="25">
+                    </td>
+                    <td class="td1 td6" id="slno_6"></td>
+                    <td class="td1 td6" id="name_6"></td>
+                    <td class="td1 td6" id="address_6"></td>
+                    <td class="td1 td6" id="city_6"></td>
+                    <td class="td1 td6" id="pin_6"></td>
+                    <td class="td1 td6" id="phone_6"></td>
+                </tr>
+                <tr id="row_7">
+                    <td class="td1 td7"><img id="img_7_0" onclick="editRow('7')" src="edit1.png"
+                            width="40" height="25"></td>
+                    <td class="td1 td7"><img id="img_7_1" onclick="deleteRow('7')" src="del.png"
+                            width="40" height="25">
+                    </td>
+                    <td class="td1 td7" id="slno_7"></td>
+                    <td class="td1 td7" id="name_7"></td>
+                    <td class="td1 td7" id="address_7"></td>
+                    <td class="td1 td7" id="city_7"></td>
+                    <td class="td1 td7" id="pin_7"></td>
+                    <td class="td1 td7" id="phone_7"></td>
+                </tr>
+                <tr id="row_8">
+                    <td class="td1 td8"><img id="img_8_0" onclick="editRow('8')" src="edit1.png"
+                            width="40" height="25"></td>
+                    <td class="td1 td8"><img id="img_8_1" onclick="deleteRow('8')" src="del.png"
+                            width="40" height="25">
+                    </td>
+                    <td class="td1 td8" id="slno_8"></td>
+                    <td class="td1 td8" id="name_8"></td>
+                    <td class="td1 td8" id="address_8"></td>
+                    <td class="td1 td8" id="city_8"></td>
+                    <td class="td1 td8" id="pin_8"></td>
+                    <td class="td1 td8" id="phone_8"></td>
+                </tr>
+                <tr id="row_9">
+                    <td class="td1 td9"><img id="img_9_0" onclick="editRow('9')" src="edit1.png"
+                            width="40" height="25"></td>
+                    <td class="td1 td9"><img id="img_9_1" onclick="deleteRow('9')" src="del.png"
+                            width="40" height="25">
+                    </td>
+                    <td class="td1 td9" id="slno_9"></td>
+                    <td class="td1 td9" id="name_9"></td>
+                    <td class="td1 td9" id="address_9"></td>
+                    <td class="td1 td9" id="city_9"></td>
+                    <td class="td1 td9" id="pin_9"></td>
+                    <td class="td1 td9" id="phone_9"></td>
+                </tr>
+                <tr id="row_10">
+                    <td class="td1 td10"><img id="img_10_0" onclick="editRow('10')" src="edit1.png"
+                            width="40" height="25">
+                    </td>
+                    <td class="td1 td10"><img id="img_10_1" onclick="deleteRow('10')" src="del.png"
+                            width="40" height="25">
+                    </td>
+                    <td class="td1 td10" id="slno_10"></td>
+                    <td class="td1 td10" id="name_10"></td>
+                    <td class="td1 td10" id="address_10"></td>
+                    <td class="td1 td10" id="city_10"></td>
+                    <td class="td1 td10" id="pin_10"></td>
+                    <td class="td1 td10" id="phone_10"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
